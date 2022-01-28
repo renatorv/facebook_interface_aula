@@ -11,8 +11,6 @@ void main() {
     ),
   );
 }
-
-
 // 0:13 / 21:59
 // 40. Listagem de postagens
 
@@ -26,3 +24,11 @@ void main() {
 // https://www.urbanfonts.com/fonts/typewriter-fonts.htm
 // https://fonts.google.com/
 // https://www.mockplus.com/blog/post/best-font-for-mobile-app => Testar Nunito
+
+
+// LINKS
+// https://github.com/abuanwar072/E-commerce-Complete-Flutter-UI
+// https://github.com/RivaanRanawat/instagram-flutter-clone
+// https://www.interviewbit.com/blog/flutter-projects/?amp=1#11-instagram-clone
+// https://medium.com/@karangore518/flutter-with-getx-8d91aa9649f3
+// https://pt.stackoverflow.com/questions/397790/flutter-tela-de-login
