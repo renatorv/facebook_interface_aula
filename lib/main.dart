@@ -11,8 +11,9 @@ void main() {
     ),
   );
 }
-// 0:13 / 21:59
-// 40. Listagem de postagens
+
+// Fazer
+// 41. Exibindo detalhes da postagem
 
 // https://fiodevida.com/aprenda-as-caracteristicas-especificas-das-paletas-de-cores-de-azul-medio-a-escuro/
 // https://www.canva.com/pt_br/aprenda/cores-para-sites-50-paginas-impactantes/
