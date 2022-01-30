@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook_interface_aula/componentes/image_perfil.dart';
 import 'package:facebook_interface_aula/modelos/modelos.dart';
+import 'package:facebook_interface_aula/uteis/paleta_cores.dart';
 import 'package:flutter/material.dart';
 
 class CartaoPostagem extends StatelessWidget {
@@ -37,13 +38,69 @@ class CartaoPostagem extends StatelessWidget {
           ),
 
           // Área de estátisticas
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            child: EstatisticasPostagem(postagem: postagem),
           ),
         ],
       ),
+    );
+  }
+}
+
+class EstatisticasPostagem extends StatelessWidget {
+  final Postagem postagem;
+  const EstatisticasPostagem({Key? key, required this.postagem})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Container(
+              padding: EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                color: PaletaCores.azulFacebook,
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                Icons.thumb_up,
+                size: 12,
+                color: Colors.white,
+              ),
+            ),
+            SizedBox(width: 4),
+            Expanded(
+              child: Text(
+                '${postagem.curtidas}',
+                style: TextStyle(
+                  color: Colors.grey[700],
+                ),
+              ),
+            ),
+            SizedBox(width: 4),
+            Text(
+              '${postagem.comentarios} comentários',
+              style: TextStyle(
+                color: Colors.grey[700],
+              ),
+            ),
+            SizedBox(width: 8),
+            Text(
+              '${postagem.compartilhamentos} compartilhamentos',
+              style: TextStyle(
+                color: Colors.grey[700],
+              ),
+            )
+          ],
+        ),
+        Divider(
+          thickness: 1.2,
+        ),
+        Row(),
+      ],
     );
   }
 }
