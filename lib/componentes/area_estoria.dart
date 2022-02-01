@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:facebook_interface_aula/componentes/image_perfil.dart';
 import 'package:facebook_interface_aula/dados/dados.dart';
@@ -108,7 +106,7 @@ class CartaoEstoria extends StatelessWidget {
           left: 8,
           right: 8,
           child: Text(
-            adicionarEstoria ? 'Criar Story': estoria.usuario.nome,
+            adicionarEstoria ? 'Criar Story' : estoria.usuario.nome,
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,

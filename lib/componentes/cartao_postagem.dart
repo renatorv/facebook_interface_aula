@@ -3,6 +3,7 @@ import 'package:facebook_interface_aula/componentes/image_perfil.dart';
 import 'package:facebook_interface_aula/modelos/modelos.dart';
 import 'package:facebook_interface_aula/uteis/paleta_cores.dart';
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 
 class CartaoPostagem extends StatelessWidget {
   final Postagem postagem;
@@ -15,6 +16,9 @@ class CartaoPostagem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Colors.white,
+      margin: EdgeInsets.symmetric(vertical: 8),
+      padding: EdgeInsets.symmetric(vertical: 8),
       child: Column(
         children: [
           // Cabeçalho
@@ -99,8 +103,76 @@ class EstatisticasPostagem extends StatelessWidget {
         Divider(
           thickness: 1.2,
         ),
-        Row(),
+        Row(
+          children: [
+            BotoaPostagem(
+              icone: Icon(
+                LineIcons.thumbsUpAlt,
+                color: Colors.grey[700],
+              ),
+              texto: 'Curtir',
+              onTap: () {},
+            ),
+            BotoaPostagem(
+              icone: Icon(
+                LineIcons.alternateCommentAlt,
+                color: Colors.grey[700],
+              ),
+              texto: 'Comentar',
+              onTap: () {},
+            ),
+            BotoaPostagem(
+              icone: Icon(
+                LineIcons.share,
+                color: Colors.grey[700],
+              ),
+              texto: 'Compartilhar',
+              onTap: () {},
+            ),
+          ],
+        ),
       ],
+    );
+  }
+}
+
+class BotoaPostagem extends StatelessWidget {
+  final Icon icone;
+  final String texto;
+  final VoidCallback onTap;
+
+  const BotoaPostagem({
+    Key? key,
+    required this.icone,
+    required this.texto,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Material(
+        child: InkWell(
+          onTap: onTap,
+          child: Container(
+            child: Row(
+              children: [
+                icone,
+                SizedBox(
+                  width: 4,
+                ),
+                Text(
+                  texto,
+                  style: TextStyle(
+                    color: Colors.grey[700],
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

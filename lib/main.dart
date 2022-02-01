@@ -1,19 +1,23 @@
 import 'package:facebook_interface_aula/telas/home.dart';
+import 'package:facebook_interface_aula/telas/principal.dart';
+import 'package:facebook_interface_aula/uteis/paleta_cores.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
     MaterialApp(
-      theme: ThemeData(fontFamily: 'Nunito'),
+      theme: ThemeData(
+          fontFamily: 'Nunito', scaffoldBackgroundColor: PaletaCores.scaffold),
       title: 'FaceBook',
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      // home: Home(),
+      home: Principal(),
     ),
   );
 }
 
 // Fazer
-// 41. Exibindo detalhes da postagem
+// 43. Barra de navegação responsiva
 
 // https://fiodevida.com/aprenda-as-caracteristicas-especificas-das-paletas-de-cores-de-azul-medio-a-escuro/
 // https://www.canva.com/pt_br/aprenda/cores-para-sites-50-paginas-impactantes/
