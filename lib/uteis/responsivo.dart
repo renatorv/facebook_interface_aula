@@ -1,7 +1,14 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class Responsivo extends StatelessWidget {
-  const Responsivo({Key? key}) : super(key: key);
+  final Widget mobile;
+  final Widget? tablet;
+  final Widget desktop;
+  const Responsivo(
+      {Key? key, required this.mobile, required this.desktop, this.tablet})
+      : super(key: key);
 
   static bool isMobile(BuildContext context) {
     return MediaQuery.of(context).size.width < 800;
@@ -18,11 +25,20 @@ class Responsivo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(''),
-      ),
-      body: Container(),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        if (constraints.maxWidth >= 1200) {
+          return desktop;
+        } else if (constraints.maxWidth >= 800) {
+          Widget? resTable = this.tablet;
+          if (resTable != null) {
+            return resTable;
+          }
+          return this.mobile;
+        } else {
+          return mobile;
+        }
+      },
     );
   }
 }
