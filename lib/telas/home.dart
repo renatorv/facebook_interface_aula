@@ -41,12 +41,13 @@ class HomeMobile extends StatelessWidget {
           floating: true,
           centerTitle: false,
           title: Text(
-            'FaceBook - M',
+            'Petgram',
             style: TextStyle(
               color: PaletaCores.azulFacebook,
               fontWeight: FontWeight.bold,
-              fontSize: 28,
-              letterSpacing: -1.2,
+              fontSize: 42,
+              letterSpacing: 2,
+              fontFamily: 'Kurale' // Kurale //SansitaSwashed //Lobster
             ),
           ),
           actions: [

@@ -36,3 +36,11 @@ void main() {
 // https://www.interviewbit.com/blog/flutter-projects/?amp=1#11-instagram-clone
 // https://medium.com/@karangore518/flutter-with-getx-8d91aa9649f3
 // https://pt.stackoverflow.com/questions/397790/flutter-tela-de-login
+
+
+
+/// FONTES PARA O TÍTULO
+/// https://fonts.google.com/specimen/Berkshire+Swash?preview.text=Petgram&preview.text_type=custom
+/// https://fonts.google.com/specimen/Kurale?preview.text=Petgram&preview.text_type=custom
+/// https://fonts.google.com/specimen/Lobster?preview.text=Petgram&preview.text_type=custom&category=Display#standard-styles
+/// https://fonts.google.com/specimen/Sansita+Swashed?preview.text=Petgram&preview.text_type=custom&category=Display
