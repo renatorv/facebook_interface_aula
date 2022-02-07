@@ -15,8 +15,9 @@ void main() {
   );
 }
 
-// Fazer
-// 45. Página inicial responsiva
+// TESTAR
+// https://fonts.google.com/specimen/Cookie?preview.text=Instagram&preview.text_type=custom
+// https://fonts.google.com/specimen/Quintessential?preview.text=Instagram&preview.text_type=custom
 
 // https://fiodevida.com/aprenda-as-caracteristicas-especificas-das-paletas-de-cores-de-azul-medio-a-escuro/
 // https://www.canva.com/pt_br/aprenda/cores-para-sites-50-paginas-impactantes/
