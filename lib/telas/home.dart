@@ -3,6 +3,7 @@ import 'package:facebook_interface_aula/componentes/area_estoria.dart';
 import 'package:facebook_interface_aula/componentes/botao_circulo.dart';
 import 'package:facebook_interface_aula/componentes/cartao_postagem.dart';
 import 'package:facebook_interface_aula/componentes/lista_contatos.dart';
+import 'package:facebook_interface_aula/componentes/lista_opcoes.dart';
 import 'package:facebook_interface_aula/dados/dados.dart';
 import 'package:facebook_interface_aula/modelos/modelos.dart';
 import 'package:facebook_interface_aula/uteis/paleta_cores.dart';
@@ -18,37 +19,55 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final TrackingScrollController _scrollController = TrackingScrollController();
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Responsivo(
-        mobile: HomeMobile(),
-        desktop: HomeDesktop(),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        body: Responsivo(
+          mobile: HomeMobile(
+            scrollController: _scrollController,
+          ),
+          desktop: HomeDesktop(
+            scrollController: _scrollController,
+          ),
+        ),
       ),
     );
   }
 }
 
 class HomeMobile extends StatelessWidget {
-  const HomeMobile({Key? key}) : super(key: key);
+  final TrackingScrollController scrollController;
+  const HomeMobile({Key? key, required this.scrollController})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      controller: scrollController,
       slivers: [
         SliverAppBar(
           backgroundColor: Colors.white,
           floating: true,
           centerTitle: false,
           title: Text(
-            'Petgram',
+            'Kurale',
             style: TextStyle(
-              color: PaletaCores.azulFacebook,
-              fontWeight: FontWeight.bold,
-              fontSize: 42,
-              letterSpacing: 2,
-              fontFamily: 'Kurale' // Kurale //SansitaSwashed //Lobster
-            ),
+                color: PaletaCores.azulFacebook,
+                fontWeight: FontWeight.bold,
+                fontSize: 42,
+                letterSpacing: 2,
+                fontFamily: 'Kurale' // Kurale //SansitaSwashed //Lobster
+                ),
           ),
           actions: [
             BotaoCirculo(
@@ -93,20 +112,25 @@ class HomeMobile extends StatelessWidget {
 }
 
 class HomeDesktop extends StatelessWidget {
-  const HomeDesktop({Key? key}) : super(key: key);
+  final TrackingScrollController scrollController;
+  const HomeDesktop({Key? key, required this.scrollController})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Flexible(
-          child: Container(color: Colors.amber),
+          child: Padding(
+              padding: EdgeInsets.all(12),
+              child: ListaOpcoes(usuario: usuarioAtual)),
           flex: 2,
         ),
         Spacer(),
         Flexible(
           flex: 5,
           child: CustomScrollView(
+            controller: scrollController,
             slivers: [
               SliverAppBar(
                 backgroundColor: Colors.white,

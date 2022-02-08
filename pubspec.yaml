@@ -85,7 +85,24 @@ flutter:
       fonts:
         - asset: assets/fonts/Lobster-Regular.ttf
           weight: 700
+    - family: IndieFlower
+      fonts:
+        - asset: assets/fonts/IndieFlower-Regular.ttf
+          weight: 700
+    - family: ShortStack
+      fonts:
+        - asset: assets/fonts/ShortStack-Regular.ttf
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Roboto-Italic.ttf
+          weight: 400
 
-  #  assets\fonts\Lobster-Regular.ttf
+  #  assets\fonts\Lobster-Regular.ttf   
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

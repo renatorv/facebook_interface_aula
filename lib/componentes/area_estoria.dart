@@ -3,6 +3,7 @@ import 'package:facebook_interface_aula/componentes/image_perfil.dart';
 import 'package:facebook_interface_aula/dados/dados.dart';
 import 'package:facebook_interface_aula/modelos/modelos.dart';
 import 'package:facebook_interface_aula/uteis/paleta_cores.dart';
+import 'package:facebook_interface_aula/uteis/responsivo.dart';
 import 'package:flutter/material.dart';
 
 class AreaEstoria extends StatelessWidget {
@@ -14,9 +15,10 @@ class AreaEstoria extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDesktop = Responsivo.isDesktop(context);
     return Container(
       height: 200,
-      color: Colors.white,
+      color: isDesktop ? Colors.transparent : Colors.white,
       child: ListView.builder(
         padding: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
         scrollDirection: Axis.horizontal,
